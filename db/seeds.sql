@@ -1,17 +1,19 @@
   -- Inserted a set of records into the table
+  USE burgersDB;
+
   INSERT INTO burgers
     (burger_name)
   VALUES
-    ("Double Double");
-  INSERT INTO schools
+    ("Wings of an Angel");
+  INSERT INTO burgers
     (burger_name)
   VALUES
-    ("Texas Toaster");
-  INSERT INTO schools
+    ("Cloud9 Burger");
+  INSERT INTO burgers
     (burger_name)
   VALUES
-    ("New Mexico Meltdown");
-  INSERT INTO schools
+    ("7 Layers of Heaven");
+  INSERT INTO burgers
     (burger_name)
   VALUES
-    ("Navajo Burger");
+    ("Nizh&oacute;n&iacute; Burger");
