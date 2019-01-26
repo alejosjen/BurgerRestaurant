@@ -20,7 +20,9 @@ router.get("/", function (request, response) {
 });
 
 router.post("/api/burgers", function (request, response) {
-    burger.insertOne(["burger_name", "devoured"],
+    console.log("burger" + response);
+    burger.insertOne(
+        ["burger_name", "devoured"],
         [request.body.burger_name, request.body.devoured],
         function (result) {
             response.json({ id: result.insertID });
@@ -29,16 +31,17 @@ router.post("/api/burgers", function (request, response) {
 });
 
 router.put("/api/burgers/:id", function (request, response) {
-    var condition = "id = " + request.params.id;
+    var condition = { id: request.params.id };
     // console.log("condition", condition);
 
     burger.updateOne({
-        devoured: request.body.devoured
+        devoured: (request.body.devoured === "true")
     }, condition, function(result) {
         if (result.changedRows == 0) {
             return response.status(404).end();
         } else {
             response.status(200).end();
+            //json(result);
         }
     });
 });
