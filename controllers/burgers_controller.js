@@ -19,6 +19,7 @@ router.post("/api/burgers", function (request, response) {
         [request.body.burger_name, request.body.devoured],
         function (result) {
             response.json({ id: result.insertID });
+            response.redirect("/");
         });
 });
 
