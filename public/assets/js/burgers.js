@@ -21,14 +21,13 @@ $(function () {
     );
   });
 
+  //Take in data from client-side and send back
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log("test123")
-
     var newBurger = {
       burger_name: $("#burger").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim()
+      devoured: $("[name=devoured]:checked").val()
     };
 
     // Send the POST request.
@@ -37,7 +36,6 @@ $(function () {
       data: newBurger
     }).then(
       function () {
-        // console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
       }

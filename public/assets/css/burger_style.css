@@ -1,19 +1,60 @@
+body {
+  background: #FF7902;
+  font-family: 'Neucha', cursive, serif;
+}
+
+a {
+  color: #fff;
+}
+
+h1 {
+  font-family: 'Alfa Slab One', cursive, serif;
+}
+
+.burgerImage {
+  height: 113px;
+}
+
+.burgerLabel {
+  font-size: 1.2rem;
+}
+
+button {
+  border-radius: 10px; 
+}
+
+ul {
+  padding-left: 0px;
+}
+
 li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
+  font-size: 1.25rem;
+  border-radius: 10px; 
+  list-style-type: none;
+  padding: 5px;
+  background: #faebd7;
+}
   
-  .label {
-    font-weight: bold;
-  }
+.label {
+  font-weight: bold;
+}
   
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
   
-  .form-group {
-    margin-bottom: 5px;
-  }  
+.form-group {
+  margin-bottom: 5px;
+}  
+.fixed-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

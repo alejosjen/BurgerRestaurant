@@ -4,36 +4,29 @@ var router = express.Router();
 //Import the model to use its database functions
 var burger = require("../models/burger.js");
 
+//Route for index page with all burgers
 router.get("/", function (request, response) {
-
     burger.selectAll(function (data) {
-        console.log("test");
         var hbsObject = {
             burgers: data
         };
-        
-        // console.log(hbsObject);
-        
         response.render("index", hbsObject);
-        // response.json(hbsObject);
     });
 });
 
+//Route for inserting a new burger
 router.post("/api/burgers", function (request, response) {
-    console.log("burger" + response);
     burger.insertOne(
         ["burger_name", "devoured"],
         [request.body.burger_name, request.body.devoured],
         function (result) {
             response.json({ id: result.insertID });
-            response.redirect("/");
         });
 });
 
+//Route for eating a burger
 router.put("/api/burgers/:id", function (request, response) {
     var condition = { id: request.params.id };
-    // console.log("condition", condition);
-
     burger.updateOne({
         devoured: (request.body.devoured === "true")
     }, condition, function(result) {
@@ -41,7 +34,6 @@ router.put("/api/burgers/:id", function (request, response) {
             return response.status(404).end();
         } else {
             response.status(200).end();
-            //json(result);
         }
     });
 });
