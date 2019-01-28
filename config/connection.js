@@ -7,10 +7,11 @@ const PORT = process.env.PORT || 3000;
 const dbPassword = process.env.PASSWORD;
 const database = process.env.DATABASE;
 
-// var connection;
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
+var connection;
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
   var connection = mysql.createConnection({
     host: host,
     port: 3306,
@@ -18,17 +19,18 @@ const database = process.env.DATABASE;
     password: dbPassword,
     database: database
   });
+};
 // Make connection.
-// connection.connect();
+connection.connect();
 
 // For local hosting and testing
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
+//     return;
+//   }
+//   console.log("connected as id " + connection.threadId);
+// });
 
 // Export connection for our ORM to use.
 module.exports = connection;
