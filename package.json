@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/alejosjen/BurgerRestaurant#readme",
   "dependencies": {
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.16.0",
-    "mysqldump": "^2.2.1"
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "mysqldump": "^3.0.0"
   }
 }
